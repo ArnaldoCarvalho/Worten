@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.1b2.dev1 (Python 3.10.7 on win32)" generated="20221108 14:58:24.288" rpa="false" schemaversion="3">
+<suite id="s1" name="testeWorten" source="C:\Users\arcuc\OneDrive\Documentos\Robot Worten\testeWorten.robot">
+<test id="s1-t1" name="Cenário 1: Acessando o site da worten" line="78">
+<kw name="Abrir Worten">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${linkWorten}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221108 14:58:24.508" level="INFO">Opening browser 'chrome' to base url 'https://www.worten.pt/'.</msg>
+<status status="PASS" starttime="20221108 14:58:24.507" endtime="20221108 14:58:29.219"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:24.507" endtime="20221108 14:58:29.219"/>
+</kw>
+<kw name="Fechar Chrome">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221108 14:58:29.220" endtime="20221108 14:58:31.363"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:29.219" endtime="20221108 14:58:31.363"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:24.502" endtime="20221108 14:58:31.363"/>
+</test>
+<test id="s1-t2" name="Cenário 2: Entrar na worten e fazer login" line="81">
+<kw name="Abrir google">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${linkGoogle}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221108 14:58:31.366" level="INFO">Opening browser 'chrome' to base url 'https://www.google.pt/'.</msg>
+<status status="PASS" starttime="20221108 14:58:31.366" endtime="20221108 14:58:33.013"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ButtonCookiesGoogle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:33.015" level="INFO">Clicking element 'class:sy4vM'.</msg>
+<status status="PASS" starttime="20221108 14:58:33.014" endtime="20221108 14:58:33.071"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:31.366" endtime="20221108 14:58:33.071"/>
+</kw>
+<kw name="Pesquisar por worten">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputGoogle}</arg>
+<arg>${inputGoogleText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:33.072" level="INFO">Typing text 'Worten' into text field 'class:gLFyf'.</msg>
+<status status="PASS" starttime="20221108 14:58:33.071" endtime="20221108 14:58:33.159"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ButtonPesquisar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:33.159" level="INFO">Clicking element 'class:FPdoLc'.</msg>
+<status status="PASS" starttime="20221108 14:58:33.159" endtime="20221108 14:58:37.164"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:33.071" endtime="20221108 14:58:37.165"/>
+</kw>
+<kw name="Aceitar Cookies">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ButtonAcceptCookies}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:37.166" level="INFO">Clicking element 'class:w-button-primary'.</msg>
+<status status="PASS" starttime="20221108 14:58:37.166" endtime="20221108 14:58:37.236"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:37.166" endtime="20221108 14:58:37.236"/>
+</kw>
+<kw name="Entrar no Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ButtonIrLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:37.238" level="INFO">Clicking element 'class:nav-a.w-menu-private'.</msg>
+<status status="PASS" starttime="20221108 14:58:37.237" endtime="20221108 14:58:40.299"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:37.237" endtime="20221108 14:58:40.300"/>
+</kw>
+<kw name="Prencher os campos">
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:58:50.306" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221108 14:58:40.300" endtime="20221108 14:58:50.306"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${idUtilizador}').value="${Utilizador}"</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:58:50.306" level="INFO">Executing JavaScript:
+document.getElementById('username').value="arnaldo@dottteam.testinator.com"
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:58:50.306" endtime="20221108 14:58:50.314"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementById('${idPassword}').value="${Password}"</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:58:50.315" level="INFO">Executing JavaScript:
+document.getElementById('current-password').value="ArnaldoCT"
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:58:50.314" endtime="20221108 14:58:50.322"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:58:52.332" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221108 14:58:50.322" endtime="20221108 14:58:52.332"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:40.300" endtime="20221108 14:58:52.332"/>
+</kw>
+<kw name="Logar">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${ButtonLogin}", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:58:52.337" level="INFO">Executing JavaScript:
+document.evaluate("//button[text()='Iniciar Sessão']", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:58:52.332" endtime="20221108 14:58:52.396"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:52.332" endtime="20221108 14:58:52.396"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:31.364" endtime="20221108 14:58:52.396"/>
+</test>
+<test id="s1-t3" name="Cenário 3: simulação de uma compra" line="88">
+<kw name="Pesquisar produto">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputProduto}</arg>
+<arg>${textProduto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221108 14:58:52.400" level="INFO">Typing text 'computador' into text field 'id:search-input'.</msg>
+<status status="PASS" starttime="20221108 14:58:52.399" endtime="20221108 14:58:52.519"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${inputProduto}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20221108 14:58:52.520" level="INFO">Sending key(s) ('ENTER',) to id:search-input element.</msg>
+<msg timestamp="20221108 14:58:52.799" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20221108 14:58:52.799" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20221108 14:58:52.519" endtime="20221108 14:58:52.839"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:58:56.852" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221108 14:58:52.840" endtime="20221108 14:58:56.852"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//a[@href])[45]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:58:56.852" level="INFO">Executing JavaScript:
+document.evaluate("(//a[@href])[45]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:58:56.852" endtime="20221108 14:59:00.239"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:02.249" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:00.239" endtime="20221108 14:59:02.249"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//button[@Class])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:02.250" level="INFO">Executing JavaScript:
+document.evaluate("(//button[@Class])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:02.249" endtime="20221108 14:59:02.268"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:07.272" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:02.268" endtime="20221108 14:59:07.272"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//button[@Class])[5]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:07.272" level="INFO">Executing JavaScript:
+document.evaluate("(//button[@Class])[5]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:07.272" endtime="20221108 14:59:07.325"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputProduto}</arg>
+<arg>${textProduto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221108 14:59:07.326" level="INFO">Typing text 'computador' into text field 'id:search-input'.</msg>
+<status status="PASS" starttime="20221108 14:59:07.325" endtime="20221108 14:59:07.446"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${inputProduto}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20221108 14:59:07.447" level="INFO">Sending key(s) ('ENTER',) to id:search-input element.</msg>
+<msg timestamp="20221108 14:59:07.736" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20221108 14:59:07.736" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20221108 14:59:07.446" endtime="20221108 14:59:07.787"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:11.800" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:07.787" endtime="20221108 14:59:11.800"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//a[@href])[45]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:11.800" level="INFO">Executing JavaScript:
+document.evaluate("(//a[@href])[45]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:11.800" endtime="20221108 14:59:13.577"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:15.592" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:13.578" endtime="20221108 14:59:15.592"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//button[@Class])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:15.595" level="INFO">Executing JavaScript:
+document.evaluate("(//button[@Class])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:15.594" endtime="20221108 14:59:15.612"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:20.613" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:15.612" endtime="20221108 14:59:20.613"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//button[@Class])[5]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:20.613" level="INFO">Executing JavaScript:
+document.evaluate("(//button[@Class])[5]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:20.613" endtime="20221108 14:59:20.651"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:52.399" endtime="20221108 14:59:20.651"/>
+</kw>
+<kw name="Confirmar compra">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221108 14:59:22.661" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221108 14:59:20.653" endtime="20221108 14:59:22.661"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("(//a[@href])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20221108 14:59:22.661" level="INFO">Executing JavaScript:
+document.evaluate("(//a[@href])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20221108 14:59:22.661" endtime="20221108 14:59:24.111"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:cart-continue-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221108 14:59:24.112" level="INFO">Clicking button 'id:cart-continue-btn'.</msg>
+<status status="PASS" starttime="20221108 14:59:24.111" endtime="20221108 14:59:24.244"/>
+</kw>
+<status status="PASS" starttime="20221108 14:59:20.651" endtime="20221108 14:59:24.244"/>
+</kw>
+<status status="PASS" starttime="20221108 14:58:52.398" endtime="20221108 14:59:24.245"/>
+</test>
+<status status="PASS" starttime="20221108 14:58:24.289" endtime="20221108 14:59:24.248"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="testeWorten">testeWorten</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
