@@ -1,6 +1,6 @@
 # <<Inserir aqui o nome do sistema que está sendo testado>> Test
 
-Projeto de testes automatizados para o sistema XXXX construído com Robot Framework. Os scripts encontram-se no diretório `tests/`. As configurações de ambientes, navegadores e outras parâmetrizações estão no diretório `configs/`.  
+Projeto de testes automatizados para o sistema XXXX construído com Robot Framework. Os scripts encontram-se no diretório `tests/`. As configurações de ambientes, navegadores e outras parâmetrizações estão no arquivo `configs.resource`.  
 
 ## Configuração
 

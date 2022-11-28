@@ -1,6 +1,11 @@
 *** Settings ***
-Library  SeleniumLibrary
-Library  OperatingSystem
+Library        SeleniumLibrary
+Library        OperatingSystem
+
+Resource       ../resources/config.resource
+
+Test Setup     Open Browser    url=${WORTEN_URL}  browser=${BROWSER}
+Test Teardown  Close All Browsers    
 
 *** Variables ***
 ${Utilizador}              arnaldo@dottteam.testinator.com
@@ -19,27 +24,25 @@ ${ButtonLogin}             //button[text()='Iniciar Sessão']
 ${ButtonAcceptCookies}     class:w-button-primary
 ${inputProduto}            id:search-input
 ${textProduto}             computador
-${inputGoogle}             class:gLFyf
-${inputGoogleText}         Worten
-${ButtonPesquisar}         class:FPdoLc
-${ButtonCookiesGoogle}     class:sy4vM
-${linkGoogle}              https://www.google.pt/
 ${linkWorten}              https://www.worten.pt/
 
+*** Test Cases ***
+Cenário 1: Login no site da worten
+    [Tags]  login
+    Wait Until Element Is Visible    //button[text() = 'Aceitar Tudo']
+    Click Button  //button[text() = 'Aceitar Tudo']
+    Wait Until Element Is Visible    linkText=INICIAR SESSÃO
+    Click Link    INICIAR SESSÃO
+    Sleep   5
+
+Cenário 3: simulação de uma compra
+    Pesquisar produto
+    Confirmar compra
+
 *** Keywords ***
-Abrir Worten
-    Open Browser         ${linkWorten}        chrome
-
-Abrir google
-    Open Browser         ${linkGoogle}        chrome
-    Click Element        ${ButtonCookiesGoogle}
-
 Pesquisar por worten
     Input Text           ${inputGoogle}        ${inputGoogleText}    
     Click Element        ${ButtonPesquisar}
-
-Fechar Chrome
-    Close Browser
 
 Aceitar Cookies
     Click Element        ${ButtonAcceptCookies}
@@ -79,19 +82,3 @@ Confirmar compra
     Execute Javascript        document.evaluate("(//a[@href])[3]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotItem(0).click(); 
     Click Button              id:cart-continue-btn
     
-*** Test Cases ***
-Cenário 1: Acessando o site da worten
-    Abrir Worten
-    Fechar Chrome
-
-Cenário 2: Entrar na worten e fazer login
-    Abrir google
-    Pesquisar por worten
-    Aceitar Cookies
-    Entrar no login
-    Prencher os campos
-    Logar
-
-Cenário 3: simulação de uma compra
-    Pesquisar produto
-    Confirmar compra
